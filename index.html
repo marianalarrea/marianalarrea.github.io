@@ -50,7 +50,7 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
     }
 
@@ -64,6 +64,22 @@
     .card img {
       max-width: 100%;
       border-radius: 5px;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 177.77%; /* 9:16 aspect ratio for vertical videos */
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
 
     .contact {
@@ -86,6 +102,33 @@
       font-size: 0.9rem;
       color: #999;
       padding: 2rem 0;
+    }
+
+    .card p {
+      text-align: center;
+      font-weight: 700;
+      margin-top: 0.75rem;
+    }
+
+    .card p a {
+      color: #111;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .card p a:hover {
+      color: #555;
+    }
+
+    /* Ocultar controles no deseados (cuando sea posible) */
+    video::-internal-media-controls-download-button,
+    video::-webkit-media-controls-enclosure {
+      display: none !important;
+    }
+
+    video::-webkit-media-controls {
+      display: flex;
+      justify-content: center;
     }
   </style>
 </head>
@@ -114,29 +157,46 @@
 <section>
   <h2>Portafolio</h2>
   <div class="grid">
-    
-    <!-- TikTok Embed -->
+
+    <!-- Video MP4 personalizado -->
     <div class="card">
-      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@viajaconzapatillas/video/7500047016630816006" data-video-id="7500047016630816006" style="max-width: 100%; min-width: 300px;">
-        <section></section>
-      </blockquote>
-      <script async src="https://www.tiktok.com/embed.js"></script>
-      <p>Video reseña de producto - Marca X</p>
+      <div class="video-container">
+        <video width="100%" controls controlslist="nodownload nofullscreen noremoteplayback" disablepictureinpicture>
+          <source src="https://github.com/marianalarrea/ugc/raw/refs/heads/main/medicina.mp4" type="video/mp4">
+          Tu navegador no soporta la etiqueta de video.
+        </video>
+      </div>
+      <p><a href="https://www.google.com" target="_blank">Unboxing Zapatillas ADIDAS</a></p>
     </div>
 
-    <!-- Instagram Embed -->
     <div class="card">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CyX_example/" data-instgrm-version="14" style="max-width: 100%; min-width: 300px; margin: auto;">
-        <a href="https://www.instagram.com/p/CyX_example/" target="_blank">Ver en Instagram</a>
-      </blockquote>
-      <script async src="//www.instagram.com/embed.js"></script>
-      <p>Contenido lifestyle para Instagram</p>
+      <div class="video-container">
+        <video width="100%" controls controlslist="nodownload nofullscreen noremoteplayback" disablepictureinpicture>
+          <source src="https://github.com/marianalarrea/ugc/raw/refs/heads/main/medicina.mp4" type="video/mp4">
+          Tu navegador no soporta la etiqueta de video.
+        </video>
+      </div>
+      <p><a href="https://www.google.com" target="_blank">Unboxing Zapatillas ADIDAS</a></p>
     </div>
 
-    <!-- Otra tarjeta con imagen de respaldo -->
     <div class="card">
-      <img src="https://via.placeholder.com/400x250" alt="Unboxing">
-      <p>Unboxing creativo - Campaña navideña</p>
+      <div class="video-container">
+        <video width="100%" controls controlslist="nodownload nofullscreen noremoteplayback" disablepictureinpicture>
+          <source src="https://github.com/marianalarrea/ugc/raw/refs/heads/main/medicina.mp4" type="video/mp4">
+          Tu navegador no soporta la etiqueta de video.
+        </video>
+      </div>
+      <p><a href="https://www.google.com" target="_blank">Unboxing Zapatillas ADIDAS</a></p>
+    </div>
+
+    <div class="card">
+      <div class="video-container">
+        <video width="100%" controls controlslist="nodownload nofullscreen noremoteplayback" disablepictureinpicture>
+          <source src="https://github.com/marianalarrea/ugc/raw/refs/heads/main/medicina.mp4" type="video/mp4">
+          Tu navegador no soporta la etiqueta de video.
+        </video>
+      </div>
+      <p><a href="https://www.google.com" target="_blank">Unboxing Zapatillas ADIDAS</a></p>
     </div>
 
   </div>
@@ -153,7 +213,7 @@
 </section>
 
 <footer>
-  © 2025 Tu Nombre. Todos los derechos reservados.
+  © 2025 Mariana Larrea Arenas. Todos los derechos reservados.
 </footer>
 
 </body>
