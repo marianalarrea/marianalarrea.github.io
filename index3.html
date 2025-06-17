@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -270,7 +269,6 @@
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.05);
       text-align: center;
-      /* Removed flex styles to ensure proper centering */
     }
 
     .contact-section p {
@@ -325,9 +323,11 @@
         max-width: 90%;
       }
 
+      /* Aquí se modifica hero-text para que tenga tamaño homogéneo */
       .hero-text {
-        padding: 1.5rem;
-        max-width: 90%;
+        max-width: 95% !important;
+        padding: 1rem !important;
+        margin: 0 auto;
       }
 
       .main-name {
@@ -347,10 +347,21 @@
         text-align: center;
       }
 
+      /* Secciones con tamaño similar a hero-text */
       section {
         max-width: 95%;
         margin: 1.5rem auto;
         padding: 1rem;
+      }
+
+      .contact-section {
+        max-width: 95%;
+        padding: 1rem;
+        margin: 1.5rem auto 3rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       .card {
@@ -363,15 +374,6 @@
 
       .nav.next {
         right: 5px;
-      }
-
-      /* For mobile, keep text centered and stacked */
-      .contact-section {
-        /* These styles were already OK */
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
       }
     }
   </style>
@@ -434,10 +436,42 @@
       <div class="card">
         <div class="video-container">
           <video controls preload="metadata" controlslist="nodownload nofullscreen noremoteplayback" disablepictureinpicture>
-            <source src="https://github.com/marianalarrea/ugc/raw/refs/heads/main/Portafolio/Tintura%20H%C3%A1bitat%20Speranza.mp4" type="video/mp4">
+            <source src="https://github.com/marianalarrea/ugc/raw/refs/heads/main/Portafolio/Basement%20Balerinas.mp4" type="video/mp4">
           </video>
         </div>
-        <p><a href="https://vm.tiktok.com/ZMSYp4F9r/" target="_blank" rel="noopener noreferrer">Tintura Speranza: color natural y duradero 🌿</a></p>
+        <p><a href="https://vm.tiktok.com/ZMSYgW28v/" target="_blank" rel="noopener noreferrer">Comodidad y calidad en Basement 😎</a></p>
+      </div>
+      <div class="card">
+        <div class="video-container">
+          <video controls preload="metadata" controlslist="nodownload nofullscreen noremoteplayback" disablepictureinpicture>
+            <source src="https://github.com/marianalarrea/ugc/raw/refs/heads/main/Portafolio/Falabella%20ofertas.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p><a href="https://vm.tiktok.com/ZMSYgsNbh/" target="_blank" rel="noopener noreferrer">Ofertas increíbles en Falabella 🤩</a></p>
+      </div>
+      <div class="card">
+        <div class="video-container">
+          <video controls preload="metadata" controlslist="nodownload nofullscreen noremoteplayback" disablepictureinpicture>
+            <source src="https://github.com/marianalarrea/ugc/raw/refs/heads/main/Portafolio/Apple%20-%20iPhone%2016.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p><a href="https://vm.tiktok.com/ZMSYpx8gQ/" target="_blank" rel="noopener noreferrer">Esta hermoso el nuevo iPhone 16 🥰</a></p>
+      </div>
+      <div class="card">
+        <div class="video-container">
+          <video controls preload="metadata" controlslist="nodownload nofullscreen noremoteplayback" disablepictureinpicture>
+            <source src="https://github.com/marianalarrea/ugc/raw/refs/heads/main/Portafolio/Ross%20-%20Compras.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p><a href="https://vm.tiktok.com/ZMSYpuw8B/" target="_blank" rel="noopener noreferrer">De compras en Ross 🛍️</a></p>
+      </div>
+      <div class="card">
+        <div class="video-container">
+          <video controls preload="metadata" controlslist="nodownload nofullscreen noremoteplayback" disablepictureinpicture>
+            <source src="https://github.com/marianalarrea/ugc/raw/refs/heads/main/Portafolio/Rutas%20de%20viaje%20Miami.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p><a href="https://vm.tiktok.com/ZMSYpPBK9/" target="_blank" rel="noopener noreferrer">Nos vamos a Bamahas 🧳✈️</a></p>
       </div>
     </div>
     <button class="nav next" aria-label="Siguiente">&#10095;</button>
