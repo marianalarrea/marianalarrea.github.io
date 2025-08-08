@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mariana Larrea Arenas | UGC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Plyr CSS -->
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f3e5eb;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+      background: #fff;
+      max-width: 900px;
+      margin: 0 auto;
+      gap: 2rem;
+    }
+
+    .hero img {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+      max-width: 500px;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .main-name {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #111;
+    }
+
+    @media (min-width: 1024px) {
+      .main-name {
+        font-size: 4rem;
+      }
+    }
+
+    .divider {
+      border: none;
+      height: 2px;
+      background: #111;
+      margin: 0.5rem 0 1rem;
+      width: 100%;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: left;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-icons a {
+      color: #111;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #555;
+    }
+
+    .descripcion {
+      max-width: 900px;
+      margin: 2rem auto 3rem;
+      padding: 0 1rem;
+      font-size: 1.1rem;
+      color: #444;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out forwards;
+      animation-delay: 0.3s;
+      text-align: center;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: #222;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #111;
+      padding-bottom: 0.5rem;
+    }
+
+    ul {
+      list-style: none;
+      font-size: 1.1rem;
+      color: #444;
+      padding-left: 1.2rem;
+    }
+
+    ul li {
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.6rem;
+      width: 0.7rem;
+      height: 0.7rem;
+      background: transparent;
+    }
+
+    .carousel-container {
+      position: relative;
+      margin-top: 1rem;
+    }
+
+    .grid {
+      display: flex;
+      overflow-x: auto;
+      gap: 1.5rem;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 1rem;
+      scroll-behavior: smooth;
+    }
+
+    .grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    .grid {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .card {
+      flex: 0 0 auto;
+      width: 280px;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 177.77%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
+    }
+
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+    }
+
+    .card p {
+      text-align: center;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .card p a {
+      color: #111;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .card p a:hover {
+      color: #555;
+    }
+
+    .nav {
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.6);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-size: 1.5rem;
+      z-index: 10;
+      display: none;
+      border-radius: 5px;
+      user-select: none;
+    }
+
+    .nav.prev {
+      left: -10px;
+    }
+
+    .nav.next {
+      right: -10px;
+    }
+
+    @media (min-width: 768px) {
+      .nav {
+        display: block;
+      }
+    }
+
+    .contact-section {
+      max-width: 900px;
+      margin: 2rem auto 3rem;
+      padding: 2rem 1rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .contact-section p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    a.button {
+      background: #111;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: background 0.3s;
+    }
+
+    a.button:hover {
+      background: #444;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #999;
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+
+    video::-internal-media-controls-download-button,
+    video::-webkit-media-controls-enclosure {
+      display: none !important;
+    }
+
+    video::-webkit-media-controls {
+      display: flex;
+      justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+
+      .hero img {
+        max-width: 90%;
+      }
+
+      .hero-text {
+        max-width: 95% !important;
+        padding: 1rem !important;
+        margin: 0 auto;
+      }
+
+      .main-name {
+        font-size: 2.4rem;
+        text-align: center;
+      }
+
+      .subtitle {
+        text-align: center;
+      }
+
+      .social-icons {
+        justify-content: center;
+      }
+
+      .descripcion {
+        text-align: center;
+      }
+
+      section {
+        max-width: 95%;
+        margin: 1.5rem auto;
+        padding: 1rem;
+      }
+
+      .contact-section {
+        max-width: 95%;
+        padding: 1rem;
+        margin: 1.5rem auto 3rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 90vw;
+      }
+
+      .nav.prev {
+        left: 5px;
+      }
+
+      .nav.next {
+        right: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <img src="https://raw.githubusercontent.com/marianalarrea/ugc/refs/heads/main/MLA.jpg" alt="Mariana Larrea Arenas">
+  <div class="hero-text">
+    <h1 class="main-name">Mariana Larrea Arenas</h1>
+    <hr class="divider" />
+    <h3 class="subtitle">Creadora de Contenido UGC</h3>
+    <div class="social-icons">
+      <a href="https://www.tiktok.com/@viajaconzapatillas" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/viajaconzapatillas" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:marianalarrea3@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://wa.me/51950017688" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Sobre mi:</h2>
+  <ul>
+    Soy creadora de contenido UGC que ayuda a marcas a conectar con personas reales a través de contenido auténtico, cotidiano y visualmente atractivo. Trabajo con productos que uso y en los que creo; desde skincare, ropa, gadgets, tecnología, hasta comida y experiencias de viajes. Mi estilo es natural, cercano y pensado para generar confianza y conexión real.
+  </ul>
+</section>
+
+<section>
+  <h2>Servicios UGC</h2>
+  <ul>
+    <li>📦 Unboxing de productos</li>
+    <li>🎥 Videos lifestyle naturales para TikTok / Reels</li>
+    <li>📸 Fotografía de producto (cuidado personal, moda, tech, food)</li>
+    <li>🌍 Mini guías y contenido de viajes (desde mi experiencia real)</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Portafolio</h2>
+  <div class="carousel-container">
+    <button class="nav prev" aria-label="Anterior">&#10094;</button>
+    <div class="grid" id="carousel">
+      <!-- Reemplaza todos los <video> por Plyr -->
+      <!-- Ejemplo -->
+      <div class="card">
+        <div class="video-container">
+          <video class="plyr" playsinline controls>
+            <source src="https://github.com/marianalarrea/ugc/raw/refs/heads/main/Portafolio/CIF%20en%20crema.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p><a href="https://vm.tiktok.com/ZMSYpLuL7/" target="_blank">Probamos el nuevo CIF Crema y quede 😮🥿</a></p>
+      </div>
+      <div class="card">
+        <div class="video-container">
+          <video class="plyr" playsinline controls>
+            <source src="https://github.com/marianalarrea/ugc/raw/refs/heads/main/Portafolio/Insolito%20-%20Wraps.mp4">
+          </video>
+        </div>
+        <p><a href="https://vm.tiktok.com/ZMSYp9t3t/" target="_blank" rel="noopener noreferrer">Estos Wraps de Insólito son 😋</a></p>
+      </div>
+      <div class="card">
+        <div class="video-container">
+          <video class="plyr" playsinline controls>
+            <source src="https://github.com/marianalarrea/ugc/raw/refs/heads/main/Portafolio/Basement%20Balerinas.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p><a href="https://vm.tiktok.com/ZMSYgW28v/" target="_blank" rel="noopener noreferrer">¡Zapatos en tendencia de Pinterest en Lima! 😎</a></p>
+      </div>
+      <div class="card">
+        <div class="video-container">
+          <video class="plyr" playsinline controls>
+            <source src="https://github.com/marianalarrea/ugc/raw/refs/heads/main/Portafolio/Falabella%20ofertas.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p><a href="https://vm.tiktok.com/ZMSYgsNbh/" target="_blank" rel="noopener noreferrer">Haul de compras y descuentos ¡en Falabella! 🤩</a></p>
+      </div>
+      <div class="card">
+        <div class="video-container">
+          <video class="plyr" playsinline controls>
+            <source src="https://github.com/marianalarrea/ugc/raw/refs/heads/main/Portafolio/Apple%20-%20iPhone%2016.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p><a href="https://vm.tiktok.com/ZMSYpx8gQ/" target="_blank" rel="noopener noreferrer">Unboxing iPhone 16 ¿no es hermoso? 🥰</a></p>
+      </div>
+      <div class="card">
+        <div class="video-container">
+          <video class="plyr" playsinline controls>
+            <source src="https://github.com/marianalarrea/ugc/raw/refs/heads/main/Portafolio/Ross%20-%20Compras.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p><a href="https://vm.tiktok.com/ZMSYpuw8B/" target="_blank" rel="noopener noreferrer">Tips para comprar en ROSS 🛍️</a></p>
+      </div>
+      <div class="card">
+        <div class="video-container">
+          <video class="plyr" playsinline controls>
+            <source src="https://github.com/marianalarrea/ugc/raw/refs/heads/main/Portafolio/Rutas%20de%20viaje%20Miami.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p><a href="https://vm.tiktok.com/ZMSYpPBK9/" target="_blank" rel="noopener noreferrer">De Miami a Bahamas ¡a sólo 2 horas en FERRY! 🧳✈️</a></p>
+      </div>
+    </div>
+    <button class="nav next" aria-label="Siguiente">&#10095;</button>
+  </div>
+</section>
+
+<section class="contact-section">
+  <h2>Trabajemos juntos</h2>
+  <p>¿Quieres contenido auténtico para tu marca? Estoy lista para colaborar.</p>
+  <a href="mailto:marianalarrea3@gmail.com" class="button">Contáctame</a>
+  <p>Sígueme:
+    <a href="https://www.instagram.com/viajaconzapatillas" target="_blank">Instagram</a> |
+    <a href="https://www.tiktok.com/@viajaconzapatillas" target="_blank">TikTok</a>
+  </p>
+</section>
+
+<footer>
+  &copy; 2025 Mariana Larrea Arenas. Todos los derechos reservados.
+</footer>
+
+<!-- Plyr JS -->
+<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    Plyr.setup('.plyr');
+  });
+</script>
+
+<!-- Carousel JS -->
+<script>
+  const carousel = document.getElementById('carousel');
+  const prevBtn = document.querySelector('.nav.prev');
+  const nextBtn = document.querySelector('.nav.next');
+
+  prevBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: -300, behavior: 'smooth' });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>
