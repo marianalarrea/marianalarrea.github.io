@@ -387,10 +387,10 @@
     <hr class="divider" />
     <h3 class="subtitle">Creadora de Contenido UGC</h3>
     <div class="social-icons">
-      <a href="https://www.tiktok.com/@tuusuario" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-      <a href="https://www.instagram.com/tuusuario" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="mailto:tuemail@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-      <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.tiktok.com/@viajaconzapatillas" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/viajaconzapatillas" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:marianalarrea3@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://wa.me/51950017688" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </div>
   </div>
 </section>
@@ -481,7 +481,7 @@
 <section class="contact-section">
   <h2>Trabajemos juntos</h2>
   <p>¿Quieres contenido auténtico para tu marca? Estoy lista para colaborar.</p>
-  <a href="mailto:tuemail@ejemplo.com" class="button" style="margin: 1.5rem 0;">Contáctame</a>
+  <a href="mailto:marianalarrea3@gmail.com" class="button" style="margin: 1.5rem 0;">Contáctame</a>
   <p>Sígueme: 
     <a href="https://www.instagram.com/viajaconzapatillas" target="_blank" rel="noopener noreferrer">Instagram</a> | 
     <a href="https://www.tiktok.com/@viajaconzapatillas" target="_blank" rel="noopener noreferrer">TikTok</a>
@@ -504,6 +504,39 @@
 
   nextBtn.addEventListener('click', () => {
     carousel.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+</script>
+
+<script>
+  // Carousel (ya está en tu HTML, esto es solo referencia)
+  const carousel = document.getElementById('carousel');
+  const prevBtn = document.querySelector('.nav.prev');
+  const nextBtn = document.querySelector('.nav.next');
+
+  prevBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: -300, behavior: 'smooth' });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+
+  // 🧠 Solución para mostrar miniaturas en Safari sin poster
+  document.addEventListener("DOMContentLoaded", () => {
+    const videos = document.querySelectorAll("video");
+    videos.forEach(video => {
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            video.pause();
+            video.currentTime = 0.01; // Forzar miniatura sin reproducir nada visible
+          })
+          .catch(error => {
+            // Safari bloquea autoplay, no importa, ya intentamos
+          });
+      }
+    });
   });
 </script>
 
